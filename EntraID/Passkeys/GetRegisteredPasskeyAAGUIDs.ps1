@@ -24,5 +24,4 @@ foreach ($fido in $fidos) {
     Write-Host "- User object ID $($user.Id, $user.DisplayName) has a Passkey with AAGUID $($fido.Aaguid) of Model type '$($fido.Model)'"
     Add-Content -Path $file -Value "$($user.Id), $($user.DisplayName), $($fido.Aaguid), $($fido.Model)"
     }
-   
-}
+ }
