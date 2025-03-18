@@ -1,17 +1,18 @@
-﻿#**************************************************************************************
-# Microsoft does not provide support for the sample scripts under any of its 
-# standard support programs or services. These scripts are provided "AS IS" 
-# without any kind of warranty. Microsoft explicitly disclaims all implied 
-# warranties, including but not limited to, implied warranties of merchantability 
-# or fitness for a particular purpose. The responsibility for any risks arising 
-# from the use or performance of these scripts and accompanying documentation lies 
-# solely with you. Microsoft, its authors, and anyone involved in creating, producing, 
-# or delivering these scripts shall not be held liable for any damages, including but 
-# not limited to loss of business profits, interruption of business operations, loss 
-# of business information, or other financial losses, that result from the use of or 
-# inability to use the scripts or documentation, even if Microsoft has been informed 
-# of the possibility of such damages.
-#**************************************************************************************
+﻿<#**************************************************************************************
+ Microsoft does not provide support for the sample scripts under any of its 
+ standard support programs or services. These scripts are provided "AS IS" 
+ without any kind of warranty. Microsoft explicitly disclaims all implied 
+ warranties, including but not limited to, implied warranties of merchantability 
+ or fitness for a particular purpose. The responsibility for any risks arising 
+ from the use or performance of these scripts and accompanying documentation lies 
+ solely with you. Microsoft, its authors, and anyone involved in creating, producing, 
+ or delivering these scripts shall not be held liable for any damages, including but 
+ not limited to loss of business profits, interruption of business operations, loss 
+ of business information, or other financial losses, that result from the use of or 
+ inability to use the scripts or documentation, even if Microsoft has been informed 
+ of the possibility of such damages.
+****************************************************************************************
+#>
 
 # Check if required module is installed and install if it is not
 if (-not (Get-Module -ListAvailable -Name Microsoft.Graph.Beta.Users)) {
