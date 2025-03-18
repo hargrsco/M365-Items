@@ -8,7 +8,7 @@ Usage:
         
 Output:
 =======
-The script writes to a csv file named Get-HardwareOATHTokens.csv in the current folder 
+The script writes to a csv file named HWOATHTokens<dateTime>.csv in the current folder 
    
  Disclaimer:
  Microsoft does not provide support for the sample scripts under any of its 
