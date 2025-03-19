@@ -1,6 +1,6 @@
 <#  
 ********************************************************************************************************
-DetectCloudEndpoint.ps1:  This script will list the Hardware OATH token object(s) in Entra ID
+DetectCloudEndpoint.ps1:  This script will detect the appropriate cloud environment endpoint in Entra ID
 
 Usage:
 ======
