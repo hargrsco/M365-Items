@@ -1,6 +1,6 @@
 <#  
 ********************************************************************************************************
-Get-HardwareOATHTokens.ps1:  This script will list the Hardware OATH token object(s) in Entra ID
+ExportHardwareOATHTokens.ps1:  This script will list the Hardware OATH token object(s) in Entra ID
 
 Usage:
 ======
