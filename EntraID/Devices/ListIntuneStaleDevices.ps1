@@ -1,7 +1,5 @@
 <#  
 ********************************************************************************************************
-ListIntuneStaleDevices.ps1:  This script will detect the appropriate cloud environment endpoint in Entra ID
-
 Usage:
 ======
 .\ListIntuneStaleDevices.ps1
