@@ -1,16 +1,5 @@
 <#  
 ********************************************************************************************************
-Usage:
-======
-.\ListEntraStaleDevices.ps1
-        
-Output:
-=======
-The script will a list of devices that have not synched with Entra in over x months. For example, if you enter 3, 
-it will list the all devices that have not synced in over 3 months. Along with the device name, the 
-Script will output the User Princiapl Name, the device enrollment type, the operating system, and the
-last sync date and time. This script will exclude servers.
-   
  Disclaimer:
  Microsoft does not provide support for the sample scripts under any of its 
  standard support programs or services. These scripts are provided "AS IS" 
@@ -24,6 +13,18 @@ last sync date and time. This script will exclude servers.
  of business information, or other financial losses, that result from the use of or 
  inability to use the scripts or documentation, even if Microsoft has been informed 
  of the possibility of such damages.
+
+Usage:
+======
+.\ListEntraStaleDevices.ps1
+        
+Output:
+=======
+The script will a list of devices that have not synched with Entra in over x months. For example, if you enter 3, 
+it will list the all devices that have not synced in over 3 months. Along with the device name, the 
+Script will output the User Princiapl Name, the device enrollment type, the operating system, and the
+last sync date and time. This script will exclude servers. The output will be stored @ C:\Temp\InactiveDevices.csv. 
+The script will create C:\Temp\ if it does not exist.
 
 ********************************************************************************************************
 #>
@@ -50,6 +51,9 @@ $inactiveDevices = Get-MgDevice | Where-Object { $_.ApproximateLastSignInDateTim
 
 #Define the path for the CSV file in “C:\Temp”
 $csvFilePath = “C:\Temp\InactiveDevices.csv”
+if (-Not(Test-Path "c:\Temp\")) {
+    New-Item -ItemType Directory -Path "C:\Temp\"
+}
 
 #Export inactive devices to a CSV file
 $inactiveDevices | Select-Object DisplayName, OperatingSystem, OperatingSystemVersion, IsManaged, TrustType, ApproximateLastSignInDateTime | Export-Csv -Path $csvFilePath -NoTypeInformation
