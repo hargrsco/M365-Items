@@ -1,7 +1,5 @@
 <#  
 ********************************************************************************************************
-ListEntraStaleDevices.ps1:  This script will detect the appropriate cloud environment endpoint in Entra ID
-
 Usage:
 ======
 .\ListEntraStaleDevices.ps1
@@ -11,7 +9,7 @@ Output:
 The script will a list of devices that have not synched with Entra in over x months. For example, if you enter 3, 
 it will list the all devices that have not synced in over 3 months. Along with the device name, the 
 Script will output the User Princiapl Name, the device enrollment type, the operating system, and the
-last sync date and time.
+last sync date and time. This script will exclude servers.
    
  Disclaimer:
  Microsoft does not provide support for the sample scripts under any of its 
@@ -48,7 +46,7 @@ $months = Read-Host -Prompt "Ener the number of months you would like to filter 
 $xMonthsAgo = (Get-Date).AddMonths(-$months)
 
 #Retrieve devices and filter based on last activity
-$inactiveDevices = Get-MgDevice | Where-Object { $_.ApproximateLastSignInDateTime -lt $xMonthsAgo }
+$inactiveDevices = Get-MgDevice | Where-Object { $_.ApproximateLastSignInDateTime -lt $xMonthsAgo -and $_.TrustType -ne "ServerAD"}
 
 #Define the path for the CSV file in “C:\Temp”
 $csvFilePath = “C:\Temp\InactiveDevices.csv”
