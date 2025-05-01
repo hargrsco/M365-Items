@@ -11,7 +11,25 @@
 # of business information, or other financial losses, that result from the use of or 
 # inability to use the scripts or documentation, even if Microsoft has been informed 
 # of the possibility of such damages.
+#
+# This script will create a CSV file listing all users. Users that have an AAGUID attached
+# to them will have the AAGUID and model type listed. 
+# The file will be created in the directory that the script is run from.
+# This does not run in PowerShell 7.
 #**************************************************************************************
+
+# Check if required module is installed and install if it is not
+if (-not (Get-Module -ListAvailable -Name Microsoft.Graph.Beta.Users)) {
+    Install-Module -Name Microsoft.Graph.Beta.Users -Force
+}
+
+if (-not (Get-Module -ListAvailable -Name Microoft.Graph.Beta.Identity.SignIns)) {
+    Install-Module -Name Microsoft.Graph.Beta.Identity.SignIns -Force
+}
+
+# Import the required modules
+Import-Module Microsoft.Graph.Beta.Users
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 
 # Disconnect from Microsoft Graph
 Disconnect-MgGraph
