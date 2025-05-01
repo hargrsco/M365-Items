@@ -11,6 +11,10 @@
  of business information, or other financial losses, that result from the use of or 
  inability to use the scripts or documentation, even if Microsoft has been informed 
  of the possibility of such damages.
+
+ This script will create a CSV file with the users that have an AAGUID attached to them. 
+ The file will be created in the directory that the script is run from.
+ This does not run in PowerShell 7.
 ****************************************************************************************
 #>
 
