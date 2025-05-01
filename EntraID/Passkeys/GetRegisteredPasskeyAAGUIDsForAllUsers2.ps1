@@ -13,7 +13,7 @@
 # of the possibility of such damages.
 #
 # This script will create a CSV file listing all users. Users that have an AAGUID attached
-# to them will have the AAGUID and model type listed. 
+# to them will have the AAGUID and model type listed in the file. 
 # The file will be created in the directory that the script is run from.
 # This does not run in PowerShell 7.
 #**************************************************************************************
