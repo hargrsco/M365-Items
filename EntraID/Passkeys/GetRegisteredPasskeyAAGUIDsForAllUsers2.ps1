@@ -23,7 +23,7 @@ if (-not (Get-Module -ListAvailable -Name Microsoft.Graph.Beta.Users)) {
     Install-Module -Name Microsoft.Graph.Beta.Users -Force
 }
 
-if (-not (Get-Module -ListAvailable -Name Microoft.Graph.Beta.Identity.SignIns)) {
+if (-not (Get-Module -ListAvailable -Name Microsoft.Graph.Beta.Identity.SignIns)) {
     Install-Module -Name Microsoft.Graph.Beta.Identity.SignIns -Force
 }
 
